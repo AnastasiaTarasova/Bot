@@ -56,10 +56,7 @@ def main():
             FILENAME = "Films.csv"
             with open(FILENAME, "r", encoding='utf-8',newline="") as file:
                 reader = csv.reader(file)
-
-                for row in file.readlines():
-                    print(row)
-
+           
                 for row in reader:
                     if text in row[0] :
                         send_message(chat_id, row[1])
