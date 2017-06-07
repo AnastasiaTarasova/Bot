@@ -90,14 +90,14 @@ def main():
 
 
 
-#@bot.message_handler(commands=['start'])
-#def start(message):
- #   keyboard = types.ReplyKeyboardMarkup(True,False)
-  #  keyboard.add(*[types.KeyboardButton(name) for name in ['Drama', 'Comedy','Action', 'Adventure', 'Fantasy',
-   #                                                     'Romance', 'Family', 'Music', 'Thriller', 'Crime',
-    #                                                    'Horror', 'Science']])
-#    bot.send_message(message.from_user.id, 'Which genre do you prefer?', reply_markup=keyboard)
-#bot.polling(none_stop=True)
+@bot.message_handler(commands=['start'])
+def start(message):
+    keyboard = types.ReplyKeyboardMarkup(True,False)
+    keyboard.add(*[types.KeyboardButton(name) for name in ['Drama', 'Comedy','Action', 'Adventure', 'Fantasy',
+                                                        'Romance', 'Family', 'Music', 'Thriller', 'Crime',
+                                                        'Horror', 'Science']])
+    bot.send_message(message.from_user.id, 'Which genre do you prefer?', reply_markup=keyboard)
+bot.polling(none_stop=True)
 
 
 if __name__ == '__main__':
